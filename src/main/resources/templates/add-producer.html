@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>New Producer</title>
+</head>
+<body>
+<form method="POST" th:object="${producer}" th:action="@{/add-producer}">
+    <h4>Add new producer</h4>
+    <label >Producer name</label>
+    <input type="text" th:field="*{name}"/>
+    <button>Submit</button>
+</form>
+</body>
+</html>

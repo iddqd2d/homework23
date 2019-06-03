@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Products</title>
+</head>
+<body>
+<form th:method="PUT" th:object="${product}" th:action="@{/products}">
+    <label >Product name</label>
+    <input type="text" th:field="*{name}" th:placeholder="${product.name}"/>
+    <label >Cost</label>
+    <input type="number" th:field="*{cost}" th:placeholder="${product.cost}"/>
+    <select th:field="*{producer_id}">
+        <option value=""> -- </option>
+        <option th:each="producer : ${producers}"
+                th:value="${producer.id}"
+                th:utext="${producer.name}"></option>
+    </select>
+    <button>Submit</button>
+</form>
+</body>
+</html>
