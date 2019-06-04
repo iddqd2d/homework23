@@ -10,7 +10,7 @@
     <input type="text" th:field="*{name}"/>
     <label >Cost</label>
     <input type="number" th:field="*{cost}"/>
-    <select th:field="*{producer_id}">
+    <select th:field="*{producer}">
         <option value=""> -- </option>
         <option th:each="producer : ${producers}"
                 th:value="${producer.id}"

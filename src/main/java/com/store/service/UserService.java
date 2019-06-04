@@ -10,4 +10,8 @@ public interface UserService {
     void changeUser(User user);
 
     void deleteUserById(Integer id);
+
+    User findUserByEmail (String email);
+
+    Iterable<User> getAllUsers();
 }

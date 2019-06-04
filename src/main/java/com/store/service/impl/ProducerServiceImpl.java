@@ -31,7 +31,12 @@ public class ProducerServiceImpl implements ProducerService {
     }
 
     @Override
-    public List<Producer> getAllProducers() {
+    public Producer getProducerById(Integer id) {
+        return repository.findById(id).orElseThrow(IllegalArgumentException::new);
+    }
+
+    @Override
+    public Iterable<Producer> getAllProducers() {
         return repository.findAll();
     }
 }

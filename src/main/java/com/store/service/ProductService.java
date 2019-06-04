@@ -14,5 +14,5 @@ public interface ProductService {
 
     Product getProductById(Integer id);
 
-    List<Product> getAllProducts();
+    Iterable<Product> getAllProducts();
 }

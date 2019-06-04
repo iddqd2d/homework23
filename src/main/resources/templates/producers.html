@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Producers</title>
 </head>
 <body>
+<div th:insert="~{header :: copy}"></div>
 <a th:href="@{/add-producer}">Add Producer</a>
-<table border="1">
+<table>
     <tr>
         <th>#</th>
         <th>Producer</th>
@@ -15,8 +17,8 @@
     <tr th:each="producer,iterator : ${producers}">
         <td th:text="${iterator.index+1}"></td>
         <td th:text="${producer.name}"></td>
-        <td><a th:href="${'/change/' + producer.id}" >/</a></td>
-        <td><a th:href="${'/delete/' + producer.id}" >X</a></td>
+        <td><a th:href="${'/update-producer/' + producer.id}" >-/-</a></td>
+        <td><a th:href="${'/delete-producer/' + producer.id}" >-X-</a></td>
     </tr>
 </table>
 </body>

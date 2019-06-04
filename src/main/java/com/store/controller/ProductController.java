@@ -23,43 +23,43 @@ import java.util.Objects;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ProductController {
 
-    private ProductService productService;
-    private ProducerService producerService;
+    private final ProductService productService;
+    private final ProducerService producerService;
 
     @GetMapping("/products")
     public ModelAndView products() {
-        return new ModelAndView("products", "products", this.productService.getAllProducts());
+        return new ModelAndView("products", "products", productService.getAllProducts());
     }
 
     @GetMapping("/add-product")
     public String addProduct(Model model) {
         model.addAttribute("product", new Product());
-        model.addAttribute("producers", this.producerService.getAllProducers());
+        model.addAttribute("producers", producerService.getAllProducers());
         return "add-product";
     }
 
     @PostMapping("/add-product")
     public String addProduct(Product product) {
-        this.productService.addProduct(product);
+        productService.addProduct(product);
         return "redirect:/products";
     }
 
     @GetMapping("/update-product/{id}")
     public String changeProduct(@PathVariable("id") Integer id, Model model) {
-        model.addAttribute("product", this.productService.getProductById(id));
-        model.addAttribute("producers", this.producerService.getAllProducers());
+        model.addAttribute("product", productService.getProductById(id));
+        model.addAttribute("producers", producerService.getAllProducers());
         return "change-product";
     }
 
     @GetMapping("/delete-product/{id}")
     public String deleteProduct(@PathVariable("id") Integer id) {
-        this.productService.deleteProductById(id);
+        productService.deleteProductById(id);
         return "redirect:/products";
     }
 
     @PutMapping("/products")
     public String changeProject(Product product) {
-        this.productService.changeProduct(product);
+        productService.changeProduct(product);
         return "redirect:/products";
     }
 }

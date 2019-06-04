@@ -26,4 +26,14 @@ public class UserServiceImpl implements UserService {
     public void deleteUserById(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return repository.findUserByEmail(email);
+    }
+
+    @Override
+    public Iterable<User> getAllUsers() {
+        return repository.findAll();
+    }
 }

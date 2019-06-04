@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Products</title>
 </head>
 <body>
+<div th:insert="~{header :: copy}"></div>
 <a th:href="@{/add-product}">Add Product</a>
-<table border="1">
+<table>
     <tr>
         <th>#</th>
         <th>Product</th>
         <th>Cost</th>
+        <th>Producer</th>
         <th>Update</th>
         <th>Remove</th>
     </tr>
@@ -17,8 +20,9 @@
         <td th:text="${iterator.index+1}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.cost}"></td>
-        <td><a th:href="${'/update-product/' + product.id}" >/</a></td>
-        <td><a th:href="${'/delete-product/' + product.id}" >X</a></td>
+        <td th:text="${product.producer.name}"></td>
+        <td><a th:href="${'/update-product/' + product.id}" >-/-</a></td>
+        <td><a th:href="${'/delete-product/' + product.id}" >-X-</a></td>
     </tr>
 </table>
 </body>

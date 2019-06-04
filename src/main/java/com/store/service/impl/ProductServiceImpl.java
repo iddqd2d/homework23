@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public Iterable<Product> getAllProducts() {
        return repository.findAll();
     }
 }

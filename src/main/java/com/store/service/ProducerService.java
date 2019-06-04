@@ -12,5 +12,7 @@ public interface ProducerService {
 
     void deleteProducerById(Integer id);
 
-    List<Producer> getAllProducers();
+    Producer getProducerById(Integer id);
+
+    Iterable<Producer> getAllProducers();
 }

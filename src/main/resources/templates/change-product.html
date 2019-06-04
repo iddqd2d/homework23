@@ -5,15 +5,18 @@
 </head>
 <body>
 <form th:method="PUT" th:object="${product}" th:action="@{/products}">
+    <input type="hidden" th:field="*{id}" th:value="${product.id}"/>
     <label >Product name</label>
     <input type="text" th:field="*{name}" th:placeholder="${product.name}"/>
     <label >Cost</label>
     <input type="number" th:field="*{cost}" th:placeholder="${product.cost}"/>
-    <select th:field="*{producer_id}">
+    <select th:field="*{producer}">
         <option value=""> -- </option>
-        <option th:each="producer : ${producers}"
-                th:value="${producer.id}"
-                th:utext="${producer.name}"></option>
+        <option th:each="producerVal : ${producers}"
+                th:value="${producerVal.id}"
+                th:utext="${producerVal.name}"
+                th:selected="${producerVal.id == product.producer.id}"
+        ></option>
     </select>
     <button>Submit</button>
 </form>
