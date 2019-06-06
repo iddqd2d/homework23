@@ -14,4 +14,6 @@ public interface UserService {
     User findUserByEmail (String email);
 
     Iterable<User> getAllUsers();
+
+    User getUserById(Integer id);
 }

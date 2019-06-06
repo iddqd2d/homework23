@@ -6,7 +6,7 @@
 </head>
 <body>
 <div th:insert="~{header :: copy}"></div>
-<a th:href="@{/add-user}">Add User</a>
+<a th:href="@{/user/add}">Add User</a>
 <table>
     <tr>
         <th>#</th>
@@ -21,8 +21,8 @@
         <td th:text="${user.firstName}"></td>
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.email}"></td>
-        <td><a th:href="${'/update-user/' + user.id}" >-/-</a></td>
-        <td><a th:href="${'/delete-user/' + user.id}" >-X-</a></td>
+        <td><a th:href="${'/user/update/' + user.id}" >-/-</a></td>
+        <td><a th:href="${'/user/delete/' + user.id}" >-X-</a></td>
     </tr>
 </table>
 </body>

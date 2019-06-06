@@ -6,7 +6,7 @@
 </head>
 <body>
 <div th:insert="~{header :: copy}"></div>
-<a th:href="@{/add-producer}">Add Producer</a>
+<a th:href="@{/producer/add}">Add Producer</a>
 <table>
     <tr>
         <th>#</th>
@@ -17,8 +17,8 @@
     <tr th:each="producer,iterator : ${producers}">
         <td th:text="${iterator.index+1}"></td>
         <td th:text="${producer.name}"></td>
-        <td><a th:href="${'/update-producer/' + producer.id}" >-/-</a></td>
-        <td><a th:href="${'/delete-producer/' + producer.id}" >-X-</a></td>
+        <td><a th:href="${'/producer/update/' + producer.id}" >-/-</a></td>
+        <td><a th:href="${'/producer/delete/' + producer.id}" >-X-</a></td>
     </tr>
 </table>
 </body>

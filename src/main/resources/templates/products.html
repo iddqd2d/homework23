@@ -6,7 +6,7 @@
 </head>
 <body>
 <div th:insert="~{header :: copy}"></div>
-<a th:href="@{/add-product}">Add Product</a>
+<a th:href="@{/product/add}">Add Product</a>
 <table>
     <tr>
         <th>#</th>
@@ -21,8 +21,8 @@
         <td th:text="${product.name}"></td>
         <td th:text="${product.cost}"></td>
         <td th:text="${product.producer.name}"></td>
-        <td><a th:href="${'/update-product/' + product.id}" >-/-</a></td>
-        <td><a th:href="${'/delete-product/' + product.id}" >-X-</a></td>
+        <td><a th:href="${'/product/update/' + product.id}" >-/-</a></td>
+        <td><a th:href="${'/product/delete/' + product.id}" >-X-</a></td>
     </tr>
 </table>
 </body>
