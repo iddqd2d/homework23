@@ -15,4 +15,8 @@ public interface ProducerService {
     Producer getProducerById(Integer id);
 
     Iterable<Producer> getAllProducers();
+
+    void deleteAllProducers();
+
+    Integer getMaxId();
 }

@@ -14,7 +14,6 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
 
-
     @Override
     public void addProduct(Product product) {
         repository.save(product);
@@ -38,5 +37,15 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Iterable<Product> getAllProducts() {
        return repository.findAll();
+    }
+
+    @Override
+    public void deleteAllProducts() {
+        repository.deleteAll();
+    }
+
+    @Override
+    public Integer getMaxId() {
+        return repository.getMaxId();
     }
 }

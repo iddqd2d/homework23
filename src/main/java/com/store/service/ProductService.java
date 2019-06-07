@@ -15,4 +15,8 @@ public interface ProductService {
     Product getProductById(Integer id);
 
     Iterable<Product> getAllProducts();
+
+    void deleteAllProducts();
+
+    Integer getMaxId();
 }

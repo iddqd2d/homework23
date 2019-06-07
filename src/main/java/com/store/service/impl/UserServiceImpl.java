@@ -43,11 +43,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserByEmail(String email) {
-        return repository.findUserByEmail(email);
-    }
-
-    @Override
     public Iterable<User> getAllUsers() {
         return repository.findAll();
     }
@@ -55,5 +50,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(Integer id) {
         return repository.findById(id).orElseThrow(IllegalArgumentException::new);
+    }
+
+    @Override
+    public void deleteAllUsers() {
+        repository.deleteAll();
+    }
+
+    @Override
+    public Integer getMaxId() {
+        return repository.getMaxId();
     }
 }

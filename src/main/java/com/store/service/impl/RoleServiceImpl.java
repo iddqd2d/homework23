@@ -17,4 +17,24 @@ public class RoleServiceImpl implements RoleService {
     public Role findByRole(String role) {
         return repository.findByRole(role).orElse(new Role());
     }
+
+    @Override
+    public void deleteAllRoles() {
+        repository.deleteAll();
+    }
+
+    @Override
+    public Integer getMaxId() {
+        return repository.getMaxId();
+    }
+
+    @Override
+    public Role getRoleById(Integer id) {
+        return repository.findById(id).orElseThrow(IllegalArgumentException::new);
+    }
+
+    @Override
+    public void addRole(Role role) {
+        repository.save(role);
+    }
 }

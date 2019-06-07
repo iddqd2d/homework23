@@ -1,6 +1,5 @@
 package com.store.service;
 
-import com.store.model.Product;
 import com.store.model.User;
 
 public interface UserService {
@@ -11,9 +10,11 @@ public interface UserService {
 
     void deleteUserById(Integer id);
 
-    User findUserByEmail (String email);
-
     Iterable<User> getAllUsers();
 
     User getUserById(Integer id);
+
+    void deleteAllUsers();
+
+    Integer getMaxId();
 }

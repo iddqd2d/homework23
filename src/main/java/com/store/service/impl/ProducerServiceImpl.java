@@ -37,4 +37,14 @@ public class ProducerServiceImpl implements ProducerService {
     public Iterable<Producer> getAllProducers() {
         return repository.findAll();
     }
+
+    @Override
+    public void deleteAllProducers() {
+        repository.deleteAll();
+    }
+
+    @Override
+    public Integer getMaxId() {
+        return repository.getMaxId();
+    }
 }
